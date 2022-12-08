@@ -40,7 +40,7 @@ add_library(file-access-helper-lib SHARED
 
 # link dependencies
 target_link_libraries(file-access-helper-lib
-    PRIVATE
+    PUBLIC
     Qt5::Core
     )
 
@@ -93,7 +93,6 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/file-access-helper-libConfig.cmake"
 # install targets cmake-files
 install(EXPORT file-access-helper-libExport
     FILE file-access-helper-libTargets.cmake
-    NAMESPACE VeinMeta::
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/file-access-helper-lib
     )
 

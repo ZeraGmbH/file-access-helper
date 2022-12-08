@@ -38,6 +38,12 @@ add_library(file-access-helper-lib SHARED
     ${HEADERS}
 )
 
+# link dependencies
+target_link_libraries(file-access-helper-lib
+    PRIVATE
+    Qt5::Core
+    )
+
 # set target Version
 set_target_properties(file-access-helper-lib PROPERTIES VERSION ${PROJECT_VERSION})
 set_target_properties(file-access-helper-lib PROPERTIES SOVERSION ${file-access-helper_VERSION_MAJOR})

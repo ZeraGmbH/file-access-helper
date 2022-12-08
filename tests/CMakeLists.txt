@@ -2,7 +2,7 @@ add_test(NAME    file-access-helper-unittest
          COMMAND file-access-helper-unittest)
 
 file(GLOB UNITTESTS
-    tests/gtest/unittest-*.cpp
+    gtest/unittest-*.cpp
 )
 
 add_executable(file-access-helper-unittest
@@ -12,7 +12,7 @@ add_executable(file-access-helper-unittest
 target_include_directories(file-access-helper-unittest
     PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
 target_link_libraries(file-access-helper-unittest

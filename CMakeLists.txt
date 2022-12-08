@@ -100,4 +100,5 @@ install(
 # spawn out some info on configuration
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-
+enable_testing()
+add_subdirectory(tests)

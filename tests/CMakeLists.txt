@@ -12,7 +12,7 @@ add_executable(file-access-helper-unittest
 target_include_directories(file-access-helper-unittest
     PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${PROJECT_SOURCE_DIR}/src
     )
 
 target_link_libraries(file-access-helper-unittest

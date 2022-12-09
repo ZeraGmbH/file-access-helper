@@ -2,9 +2,6 @@
  *  the allowed list should contain the allowed folders (for writing)
  *
  *  list of open points
- *  what happens with
- *  - symlinks (containig the desired folder, but pointing somewhere elses
- *  - what happens when folder does not exist
  *
  *  - usb and serial number
 */
@@ -19,7 +16,9 @@ FileAccessHelper::FileAccessHelper()
 bool FileAccessHelper::isAccessAllowed(QString fileName)
 {
     QFileInfo fileInfo(fileName);
-    return m_allowedDirs.contains(fileInfo.absoluteDir());
+    QString absoluteFilePath(fileInfo.absolutePath());
+
+    return m_allowedDirs.contains(absoluteFilePath);
 }
 
 void FileAccessHelper::addDirToAllowedDirList(QDir dirName)

@@ -12,7 +12,7 @@ static const QString accessAllowedFolder =  QStringLiteral("../test-data/allowed
 static const QString accessDeniedFolder =  QStringLiteral("../test-data/denied-folder/");
 static const QString nonExistingFolder =  QStringLiteral("../test-data/operator/foo/");
 
-static const QString nastyTestFolder =  QStringLiteral("../test-data/allowed-folder/../../test-data/denied-folder");
+static const QString nastyTestFolder =  QStringLiteral("../test-data/allowed-folder/../../test-data/denied-folder/access-not-allowed.txt");
 
 TEST (FOLDER_ACCESS, NASTY_TEST_FOLDER )
 {

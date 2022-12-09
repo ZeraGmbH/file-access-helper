@@ -11,8 +11,7 @@ class FileAccessHelper
 public:
     FileAccessHelper();
 
-    bool isFileAccessAllowed(QString fileName);
-    void addFileToAllowedFilesList(QString fileName);
+    bool isAccessAllowed(QString fileName);
     void addDirToAllowedDirList(QDir dirName);
 
 private:

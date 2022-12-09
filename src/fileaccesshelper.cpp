@@ -1,3 +1,13 @@
+/*  This class is intended to use with vf files
+ *  the allowed list should contain the allowed folders (for writing)
+ *
+ *  list of open points
+ *  what happens with
+ *  - symlinks (containig the desired folder, but pointing somewhere elses
+ *  - what happens when folder does not exist
+ *
+ *  - usb and serial number
+*/
 #include "fileaccesshelper.h"
 #include <QFileInfo>
 
@@ -6,18 +16,10 @@ FileAccessHelper::FileAccessHelper()
 
 }
 
-bool FileAccessHelper::isFileAccessAllowed(QString fileName)
+bool FileAccessHelper::isAccessAllowed(QString fileName)
 {
     QFileInfo fileInfo(fileName);
-    if(m_allowedDirs.contains(fileInfo.absoluteDir())) {
-        return true;
-    }
-    return m_allowedFiles.contains(fileName);
-}
-
-void FileAccessHelper::addFileToAllowedFilesList(QString fileName)
-{
-    m_allowedFiles.append(fileName);
+    return m_allowedDirs.contains(fileInfo.absoluteDir());
 }
 
 void FileAccessHelper::addDirToAllowedDirList(QDir dirName)
